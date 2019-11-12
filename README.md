@@ -1,4 +1,4 @@
-<h1>Projeto Final | Back-end | {reprograma} + Mercado Livre | Dezembro de 2019</h1>
+<h2>Projeto Final | Back-end | {reprograma} + Mercado Livre | Dezembro de 2019</h2>
 
 <h3>Introdução</h3>
 
@@ -34,4 +34,4 @@ Vamos conversar mais? > <b>danikarasawa@gmail.com</b>
 
 <p align="center">@dindelas + .daniKarasawa{} + {reprograma}</p>
 
-<p align="center"><img src="https://media1.giphy.com/media/31ltvCocTCYyk/giphy.gif" width="400" title="Vanellope" alt="Main Character of the @Disney Wreck-it Ralph Animation Film"></p>
+<p align="center"><img src="https://media1.giphy.com/media/31ltvCocTCYyk/giphy.gif" width="300" title="Vanellope" alt="Main Character of the @Disney Wreck-it Ralph Animation Film"></p>
