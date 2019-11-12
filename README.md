@@ -32,4 +32,6 @@ Daniela Karasawa, 41, formada em Letras com o coração na Matemática e nos mot
 
 Vamos conversar mais? > <b>danikarasawa@gmail.com</b>
 
-<center>@dindelas + .daniKarasawa{} + {reprograma}</center>
+<p align="center">@dindelas + .daniKarasawa{} + {reprograma}</p>
+
+<p align="center"><img src="https://media1.giphy.com/media/31ltvCocTCYyk/giphy.gif" width="400" title="Vanellope" alt="Main Character of the @Disney Wreck-it Ralph Animation Film"></p>
