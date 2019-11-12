@@ -16,11 +16,12 @@ Para isso, nossa equipe precisa de um ambiente de usuário onde poderá aplicar 
 
 O que apresento neste projeto é uma ficha cadastral da mulher empreendedora, campos de acompanhamento de seu negócio como: estágio de aprovação de crédito, utilização de crédito e resultados do crédito no negócio, além de outras funcionalidades listadas na APIdoc. Há também uma integração básica com o Front-end. 
 
-Haverá integração com uma API - a decidir 
+Haverá integração com uma API - a decidir [CEP, Trello...]
 
 <h3>Suporte e Linguagens</h3>
 
 * HTML + CSS
+* React
 * NodeJS
 * API REST
 * MongoDB
