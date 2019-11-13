@@ -18,6 +18,30 @@ O que apresento neste projeto é uma ficha cadastral da mulher empreendedora, ca
 
 Haverá integração com uma API - a decidir [CEP, Trello...]
 
+<h3>Rotas/EndPoints</h3>
+
+GET /todos
+Rota que retorna uma lista com todos os itens da minha geladeira.
+HTTP 200 OK
+
+GET /:id
+Rota que retorna os detalhes sobre algum item, baseado no seu id.
+HTTP 200 OK
+
+POST /
+Rota que recebe um novo item, adiciona ele a geladeira e retorna o item criado.
+HTTP 201 CREATED
+
+PUT /:id
+Rota que atualiza a quantidade de um certo item na geladeira e retorna o item atualizado.
+HTTP 200 OK
+
+DELETE /:id
+Rota que deleta um item baseado em seu id.
+HTTP 204 NO CONTENT
+
+E mais... Surpresa... :D
+
 <h3>Suporte e Linguagens</h3>
 
 * HTML + CSS
