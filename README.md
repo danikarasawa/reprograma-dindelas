@@ -17,6 +17,30 @@ A <b>Dindelas®</b> é uma startup de impacto social com o objetivo de fomentar 
 
 O teste de mercado será realizado no primeiro semestre de 2020 nas Zonas Sul e Leste. Serão 6 meses de duração onde validaremos nossa ideia de negócio, a dinâmica da plataforma online e a nossa forma de comunicação com as pessoas dos bairros atendidos. 
 
+<h3>Rotas/EndPoints</h3>
+
+GET /todos
+Rota que retorna uma lista com todos os itens da minha geladeira.
+HTTP 200 OK
+
+GET /:id
+Rota que retorna os detalhes sobre algum item, baseado no seu id.
+HTTP 200 OK
+
+POST /
+Rota que recebe um novo item, adiciona ele a geladeira e retorna o item criado.
+HTTP 201 CREATED
+
+PUT /:id
+Rota que atualiza a quantidade de um certo item na geladeira e retorna o item atualizado.
+HTTP 200 OK
+
+DELETE /:id
+Rota que deleta um item baseado em seu id.
+HTTP 204 NO CONTENT
+
+E mais... Surpresa... :D
+
 <h3>Suporte e Linguagens</h3>
 
 * HTML + CSS
