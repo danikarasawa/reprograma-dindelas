@@ -19,27 +19,27 @@ O teste de mercado será realizado no primeiro semestre de 2020 nas Zonas Sul e 
 
 <h3>Rotas/EndPoints</h3>
 
-GET /todos
-Rota que retorna uma lista com todos os itens da minha geladeira.
+GET /all
+Rota para uma lista com itens sobre as mulheres empreendedoras
 HTTP 200 OK
 
 GET /:id
-Rota que retorna os detalhes sobre algum item, baseado no seu id.
+Rota para alguns detalhes de uma mulher empreendedora, baseada no id.
 HTTP 200 OK
 
-POST /
-Rota que recebe um novo item, adiciona ele a geladeira e retorna o item criado.
+POST /all
+Rota que recebe uma atualização sobre o status geral no Banco de Dados.
 HTTP 201 CREATED
 
 PUT /:id
-Rota que atualiza a quantidade de um certo item na geladeira e retorna o item atualizado.
+Rota que atualiza algum item dentro do status da mulher empreendedora e retorna esse processo pronto, baseada no id.
 HTTP 200 OK
 
 DELETE /:id
-Rota que deleta um item baseado em seu id.
+Rota que deleta um item, baseada no id.
 HTTP 204 NO CONTENT
 
-E mais... Surpresa... :D
+E mais... Surpresa... :D [Sem spoilers, ne? Após a apresentação, atualizo aqui]
 
 <h3>Suporte e Linguagens</h3>
 
