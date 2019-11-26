@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url(./img/back1.jpg);
+    background-size: cover;
+    background-position-x: repeat;
+}
+
+.title__principal{
+    font-size: 150%;
+    text-align: left;
+    color: black;
+}
+
+.principal{
+    text-align: center;
+    color: black;
+    margin-top: 20vh;
+    
+}
