@@ -11,13 +11,12 @@ body{
     background-size: cover;
     background-position-x: repeat;
     display: flex;
-    margin-top: 20vh;
+    margin-top: 20%;
 }
 
 .principal{
     text-align: center;
     color: whitesmoke;
-    font-size: 2vh;
     background-color: brown;
     background-position: cover;
     opacity: 75%;
@@ -25,37 +24,41 @@ body{
 }
 
 .principal__title{
-    font-size: 5vh;
+    font-size: 250%;
 
 }
 
-@media (min-width: 420px){
+.principal__infos{
+    font-size: 100%;
+}
+
+@media (max-width: 480px){
     body{
         display: flex;
-        margin-top: 25vh;
+        margin-top: 10%;
     }
     .principal__title{
-        font-size: 5vh;
+        font-size: 200%;
     }
     .principal{
-        font-size: 2vh;
+        font-size: 95%;
     }
 }
 
-@media (min-width: 768px){
+@media (max-width: 767px){
     body{
         display: flex;
-        margin-top: 25vh;
+        margin-top: 25%;
     }
     .principal__title{
-        font-size: 6.5vh;
+        font-size: 200%;
     }
     .principal{
-        font-size: 2.5vh;
+        font-size: 100%;
     }
 } 
 
-@media (min-width: 1024px){
+@media (min-width: 768px){
     body{
         display: flex;
         margin-top: 30vh;
@@ -68,17 +71,15 @@ body{
     }
 } 
 
-@media (min-width: 2400px){
+@media (min-width: 1200px){
     body{
         display: flex;
-        align-items: center;
-        /* margin-top: 0 auto; */
+        margin-top: 30vh;
     }
     .principal__title{
-        font-size: 15vh;
-        margin-top: -26vh;
+        font-size: 6.5vh;
     }
     .principal{
-        font-size: 5vh;
+        font-size: 2vh;
     }
-}
+} 
