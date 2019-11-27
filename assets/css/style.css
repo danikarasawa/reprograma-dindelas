@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     display: block;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -10,11 +10,14 @@ body{
     background-image: url(../img/back1.jpg);
     background-size: cover;
     background-position-x: repeat;
+    display: flex;
+    margin-top: 20vh;
 }
 
 .principal{
     text-align: center;
     color: whitesmoke;
+    font-size: 2vh;
     background-color: brown;
     background-position: cover;
     opacity: 75%;
@@ -22,29 +25,17 @@ body{
 }
 
 .principal__title{
-    font-size: 20vh;
+    font-size: 5vh;
+
 }
 
-/* @media (min-width: 300px){
+@media (min-width: 420px){
     body{
         display: flex;
-        margin-top: 2vh;
+        margin-top: 25vh;
     }
     .principal__title{
-        font-size: 9vh;
-    }
-    .principal{
-        font-size: 3vh;
-    }
-} 
-
-@media (min-width: 360px){
-    body{
-        display: flex;
-        margin-top: 17vh;
-    }
-    .principal__title{
-        font-size: 6.5vh;
+        font-size: 5vh;
     }
     .principal{
         font-size: 2vh;
@@ -54,7 +45,20 @@ body{
 @media (min-width: 768px){
     body{
         display: flex;
-        margin-top: 20vh;
+        margin-top: 25vh;
+    }
+    .principal__title{
+        font-size: 6.5vh;
+    }
+    .principal{
+        font-size: 2.5vh;
+    }
+} 
+
+@media (min-width: 1024px){
+    body{
+        display: flex;
+        margin-top: 30vh;
     }
     .principal__title{
         font-size: 6.5vh;
@@ -62,4 +66,19 @@ body{
     .principal{
         font-size: 2vh;
     }
-} */
+} 
+
+@media (min-width: 2400px){
+    body{
+        display: flex;
+        align-items: center;
+        /* margin-top: 0 auto; */
+    }
+    .principal__title{
+        font-size: 15vh;
+        margin-top: -26vh;
+    }
+    .principal{
+        font-size: 5vh;
+    }
+}
