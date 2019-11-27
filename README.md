@@ -1,5 +1,6 @@
 <h2>Projeto Final | Back-end | {reprograma} + Mercado Livre | Dezembro de 2019</h2>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69b3904b-70fe-446f-9a3c-779aa44a3e0e/deploy-status)](https://app.netlify.com/sites/empreendedoras/deploys)
 
 <h3>Objetivo</h3>
 
