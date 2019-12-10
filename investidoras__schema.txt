@@ -1,0 +1,18 @@
+{
+    cnpj: 125356000156,
+    nome: Luiza Helena Trajano,
+    telefone: 11984745622,
+    ticket: 1000,
+    tipoNegocio: [{
+        alimentacao: { type: Boolean },
+        beleza: { type: Boolean },
+        tecnologia: { type: Boolean },
+        vestuario: { type: Boolean }
+    }],
+    taxaJuros: { type: Number },
+    parcelasMaximas: { type: Number },
+    investimentoTotal: { type: Number },
+    creditoQuantidade: { type: Number }, creditoValor: { type: Number },
+    investimentoResidual: { type: Number },
+    investimentoLucro: { type: Number }
+}
