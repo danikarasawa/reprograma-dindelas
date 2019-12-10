@@ -1,40 +1,79 @@
 {
-    cpf: { type: Number },
-    nome: { type: String },
-    telefone: { type: Number },
-    idade: { type: Number },
-    estadoCivil: [{
-        solteira: { type: Boolean },
-        casada: { type: Boolean },
-        divorciada: { type: Boolean },
-        uniaoEstavel: { type: Boolean }
+    "cpf": "16151815041",
+    "nome": Geovana Almeida,
+    "telefone": "(83) 79703-6332",
+    "idade": 30,
+    "estadoCivil": [{
+        "solteira": false,
+        "casada": false,
+        "divorciada": true,
+        "uniaoEstavel": false
     }],
-    escolaridade: [{
-        ensinoFundamental: { type: Boolean },
-        ensinoMedio: { type: Boolean },
-        ensinoSuperior: { type: Boolean },
-        posGraduacao: { type: Boolean }
+    "escolaridade": [{
+        "ensinoFundamental": false,
+        "ensinoMedio": false,
+        "ensinoSuperior": true,
+        "posGraduacao": false
     }],
-    tipoNegocio: [{
-        alimentacao: { type: Boolean },
-        beleza: { type: Boolean },
-        tecnologia: { type: Boolean },
-        vestuario: { type: Boolean }
+    "tipoNegocio": [{
+        "alimentacao": false,
+        "beleza": false,
+        "tecnologia": true,
+        "vestuario": false
     }],
-    tempoNegocio: { type: Number },
-    creditoSolicitado: { type: Number },
-    formaPagamento: [{
-        parcelaUnica: { type: Boolean },
-        parcelado: { type: Boolean }
+    "tempoNegocio": 2,
+    "creditoSolicitado": 500,
+    "formaPagamento": [{
+        "parcelaUnica": false,
+        "parcelado": true
     }],
-    parcelamento: { type: Number },
-    creditoInformacoes: { type: String },
-    creditoRecebido: { type: Boolean },
-    creditoUsoAcordado: { type: Boolean },
-    relato: { type: String },
-    emoji: [{
-        feliz: { type: Boolean },
-        preocupada: { type: Boolean },
-        triste: { type: Boolean }
+    "parcelamento": 5,
+    "creditoInformacoes": "Para ampliar o negócio e comprar máquinas novas",
+    "creditoRecebido": true,
+    "creditoUsoAcordado": false,
+    "relatoData": "11/20/2019",
+    "relato": "Está engajada e bastante produtiva",
+    "emojiData": "11/20/2019",
+    "emoji": [{
+        "feliz": true,
+        "preocupada": false,
+        "triste": false
     }]
 }
+
+
+
+75839317039
+90250201003
+35609724007
+76038359095
+86709390020
+81326500007
+85173041013
+48670934086
+18170434041
+
+27259316063
+57441908051
+81691967017
+66683145032
+43836665077
+53698319047
+24677603081
+19906520000
+87721995043
+68693652028
+
+32248168055
+85885177015
+46634377022
+40472259083
+45766964080
+11908452021
+72491336081
+36088847000
+07914297097
+19474856010
+
+49822483031
+43086120045

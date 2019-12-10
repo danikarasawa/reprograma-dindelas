@@ -33,7 +33,9 @@ const EmpreendedorasSchema = new mongoose.Schema({
     creditoInformacoes: { type: String },
     creditoRecebido: { type: Boolean },
     creditoUsoAcordado: { type: Boolean },
+    relatoData: {type: Date},
     relato: { type: String },
+    emojiData: {type: Date},
     emoji: [{
         feliz: { type: Boolean },
         preocupada: { type: Boolean },

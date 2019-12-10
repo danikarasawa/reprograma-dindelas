@@ -1,18 +1,119 @@
-{
-    cnpj: 125356000156,
-    nome: Luiza Helena Trajano,
-    telefone: 11984745622,
-    ticket: 1000,
-    tipoNegocio: [{
-        alimentacao: { type: Boolean },
-        beleza: { type: Boolean },
-        tecnologia: { type: Boolean },
-        vestuario: { type: Boolean }
+[{
+    "cnpj": "125356000156",
+    "nome": "Maria Gabriela Gomes",
+    "telefone": "11984745622",
+    "ticket": "1000",
+    "tipoNegocio": [{
+        "alimentacao": true,
+        "beleza": false,
+        "tecnologia": false,
+        "vestuario": true
     }],
-    taxaJuros: { type: Number },
-    parcelasMaximas: { type: Number },
-    investimentoTotal: { type: Number },
-    creditoQuantidade: { type: Number }, creditoValor: { type: Number },
-    investimentoResidual: { type: Number },
-    investimentoLucro: { type: Number }
-}
+    "taxaJuros": "0,005",
+    "parcelasMaximas": "5",
+    "investimentoTotal": "10000",
+    "creditoQuantidade": "0", 
+    "creditoValor": "0",
+    "investimentoResidual": "0",
+    "investimentoLucro": "0"
+}, 
+
+{
+    "cnpj": "245677000135",
+    "nome": "Mariel Milk",
+    "telefone": "11975649988",
+    "ticket": "500",
+    "tipoNegocio": [{
+        "alimentacao": true,
+        "beleza": true,
+        "tecnologia": false,
+        "vestuario": false
+    }],
+    "taxaJuros": "0,0052",
+    "parcelasMaximas": "5",
+    "investimentoTotal": "5000",
+    "creditoQuantidade": "0", 
+    "creditoValor": "0",
+    "investimentoResidual": "0",
+    "investimentoLucro": "0"
+},
+
+{
+    "cnpj": "245688000144",
+    "nome": "Daniela Pio",
+    "telefone": "11976552021",
+    "ticket": "800",
+    "tipoNegocio": [{
+        "alimentacao": false,
+        "beleza": true,
+        "tecnologia": true,
+        "vestuario": false
+    }],
+    "taxaJuros": "0,008",
+    "parcelasMaximas": "10",
+    "investimentoTotal": "8000",
+    "creditoQuantidade": "0", 
+    "creditoValor": "0",
+    "investimentoResidual": "0",
+    "investimentoLucro": "0"
+},
+
+{
+    "cnpj": "345987000181",
+    "nome": "Manuela Aleixo",
+    "telefone": "11977459910",
+    "ticket": "1000",
+    "tipoNegocio": [{
+        "alimentacao": false,
+        "beleza": true,
+        "tecnologia": false,
+        "vestuario": true
+    }],
+    "taxaJuros": "0,004",
+    "parcelasMaximas": "10",
+    "investimentoTotal": "10000",
+    "creditoQuantidade": "0", 
+    "creditoValor": "0",
+    "investimentoResidual": "0",
+    "investimentoLucro": "0"
+},
+
+{
+    "cnpj": "345766000121",
+    "nome": "Marilia Leme",
+    "telefone": "11998773455",
+    "ticket": "700",
+    "tipoNegocio": [{
+        "alimentacao": false,
+        "beleza": false,
+        "tecnologia": true,
+        "vestuario": true
+    }],
+    "taxaJuros": "0,0045",
+    "parcelasMaximas": "6",
+    "investimentoTotal": "7000",
+    "creditoQuantidade": "0", 
+    "creditoValor": "0",
+    "investimentoResidual": "0",
+    "investimentoLucro": "0"
+},
+
+{
+    "cnpj": "876134000177",
+    "nome": "Sabrina Neri",
+    "telefone": "11976669800",
+    "ticket": "1500",
+    "tipoNegocio": [{
+        "alimentacao": false,
+        "beleza": true,
+        "tecnologia": true,
+        "vestuario": false
+    }],
+    "taxaJuros": "0,0078",
+    "parcelasMaximas": "5",
+    "investimentoTotal": "15000",
+    "creditoQuantidade": "0", 
+    "creditoValor": "0",
+    "investimentoResidual": "0",
+    "investimentoLucro": "0"
+}]
