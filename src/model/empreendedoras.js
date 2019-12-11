@@ -1,46 +1,25 @@
 const mongoose = require('mongoose');
 
 const EmpreendedorasSchema = new mongoose.Schema({
-    cpf: { type: Number },
-    nome: { type: String },
-    telefone: { type: Number },
-    idade: { type: Number },
-    estadoCivil: [{
-        solteira: { type: Boolean },
-        casada: { type: Boolean },
-        divorciada: { type: Boolean },
-        uniaoEstavel: { type: Boolean }
-    }],
-    escolaridade: [{
-        ensinoFundamental: { type: Boolean },
-        ensinoMedio: { type: Boolean },
-        ensinoSuperior: { type: Boolean },
-        posGraduacao: { type: Boolean }
-    }],
-    tipoNegocio: [{
-        alimentacao: { type: Boolean },
-        beleza: { type: Boolean },
-        tecnologia: { type: Boolean },
-        vestuario: { type: Boolean }
-    }],
-    tempoNegocio: { type: Number },
+    cpf: { type: Number, required: true },
+    nome: { type: String, required: true },
+    telefone: { type: Number, required: true },
+    idade: { type: Number, required: true },
+    genero: { type: String, enum: ['Feminino', 'Masculino', 'Transgênero'], required: true },
+    estadoCivil: { type: String, enum: ['Solteira', 'União Estável', 'Casada', 'Divorciada'], required: true },
+    escolaridade: { type: String, enum: ['Ensino Fundamental', 'Ensino Médio', 'Ensino Superior', 'Pós-Graduação'], required: true },
+    tipoNegocio: { type: String, enum: ['Alimentação', 'Beleza', 'Tecnologia', 'Vestuário'], required: true },
+    tempoNegocio: { type: Number, required: true },
     creditoSolicitado: { type: Number },
-    formaPagamento: [{
-        parcelaUnica: { type: Boolean },
-        parcelado: { type: Boolean }
-    }],
+    formaPagamento: { type: String, enum: ['À vista', 'Parcelado'] },
     parcelamento: { type: Number },
     creditoInformacoes: { type: String },
     creditoRecebido: { type: Boolean },
     creditoUsoAcordado: { type: Boolean },
-    relatoData: {type: Date},
+    relatoData: { type: Date },
     relato: { type: String },
-    emojiData: {type: Date},
-    emoji: [{
-        feliz: { type: Boolean },
-        preocupada: { type: Boolean },
-        triste: { type: Boolean }
-    }]
+    emojiData: { type: Date },
+    emoji: { type: String, enum: ['Feliz', 'Preocupada', 'Triste'] },
 }, {
     versionKey: false
 });

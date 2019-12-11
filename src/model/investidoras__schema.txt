@@ -3,12 +3,7 @@
     "nome": "Maria Gabriela Gomes",
     "telefone": "11984745622",
     "ticket": "1000",
-    "tipoNegocio": [{
-        "alimentacao": true,
-        "beleza": false,
-        "tecnologia": false,
-        "vestuario": true
-    }],
+    "tipoNegocio": [{"Alimentação", "Vestuário"}],
     "taxaJuros": "0,005",
     "parcelasMaximas": "5",
     "investimentoTotal": "10000",
@@ -23,12 +18,7 @@
     "nome": "Mariel Milk",
     "telefone": "11975649988",
     "ticket": "500",
-    "tipoNegocio": [{
-        "alimentacao": true,
-        "beleza": true,
-        "tecnologia": false,
-        "vestuario": false
-    }],
+    "tipoNegocio": [{"Alimentação", "Beleza"}],
     "taxaJuros": "0,0052",
     "parcelasMaximas": "5",
     "investimentoTotal": "5000",
@@ -43,12 +33,7 @@
     "nome": "Daniela Pio",
     "telefone": "11976552021",
     "ticket": "800",
-    "tipoNegocio": [{
-        "alimentacao": false,
-        "beleza": true,
-        "tecnologia": true,
-        "vestuario": false
-    }],
+    "tipoNegocio": [{"Beleza", "Tecnologia"}],
     "taxaJuros": "0,008",
     "parcelasMaximas": "10",
     "investimentoTotal": "8000",
@@ -63,12 +48,7 @@
     "nome": "Manuela Aleixo",
     "telefone": "11977459910",
     "ticket": "1000",
-    "tipoNegocio": [{
-        "alimentacao": false,
-        "beleza": true,
-        "tecnologia": false,
-        "vestuario": true
-    }],
+    "tipoNegocio": [{"Beleza", "Vestuário"}],
     "taxaJuros": "0,004",
     "parcelasMaximas": "10",
     "investimentoTotal": "10000",
@@ -83,12 +63,7 @@
     "nome": "Marilia Leme",
     "telefone": "11998773455",
     "ticket": "700",
-    "tipoNegocio": [{
-        "alimentacao": false,
-        "beleza": false,
-        "tecnologia": true,
-        "vestuario": true
-    }],
+    "tipoNegocio": [{"Tecnologia", "Vestuário"}],
     "taxaJuros": "0,0045",
     "parcelasMaximas": "6",
     "investimentoTotal": "7000",
@@ -103,12 +78,7 @@
     "nome": "Sabrina Neri",
     "telefone": "11976669800",
     "ticket": "1500",
-    "tipoNegocio": [{
-        "alimentacao": false,
-        "beleza": true,
-        "tecnologia": true,
-        "vestuario": false
-    }],
+    "tipoNegocio": [{"Beleza", "Tecnologia"}],
     "taxaJuros": "0,0078",
     "parcelasMaximas": "5",
     "investimentoTotal": "15000",
