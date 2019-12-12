@@ -4,6 +4,9 @@ const controller = require("../controllers/empreendedorasControllers");
 //const authMiddleware = require("../middlewares/auth");
 
 router.get("/empreendedoras", controller.get);
+
+// FAZER AS ROTAS VIA HEROKU E NÃO LOCALHOST
+
 /**
  * @api {get} /empreendedoras Apresenta todas as empreendedoras
  * @apiName Get Empreendedoras

@@ -37,12 +37,10 @@ exports.post = function (req, res) {
 //UPDATE TIPO DE NEGOCIO
 exports.updateCNPJ = (req, res) => {
     const cnpj = req.params.cnpj
-    
-    Investidoras.update(
+
+    Investidoras.updateOne(
         { cpf: req.params.cpf },
-        //{ $set: req.body },
-        {tipoNegocio: req.body},
-        //{ upsert: true },
+        { tipoNegocio: req.body },
         function (err) {
             if (err) return res.status(500).send({ message: err });
             res.status(200).send({ message: "Atualizado com sucesso!" });

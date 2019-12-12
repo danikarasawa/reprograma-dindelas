@@ -15,3 +15,4 @@ router.put("/:cnpj", controller.updateCNPJ)
 //INCLUIR O CRUD COMPLETO
 
 module.exports = router;
+
