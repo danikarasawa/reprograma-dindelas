@@ -6,6 +6,6 @@ app.listen(PORT, (err) => {
   if (err) {
     console.log('Servidor não encontrado. Corrige, amiga!');
   } else {
-    console.log(`Tá um tudo essa porta ${PORT} ♥`)
+    console.log(`SÓ VEM PORTA ${PORT} ♥ ♥ ♥`)
   };
 });

@@ -4,7 +4,7 @@ const Empreendedoras = require("../model/empreendedoras");
 
 //GET ALL EMPREENDEDORAS
 exports.get = (req, res) => {
-    Empreendedoras.find(function (err, empreendedoras){
+    Empreendedoras.find(function (err, empreendedoras) {
         if (err) res.status(500).send(err);
         res.status(200).send(empreendedoras);
     });
@@ -19,7 +19,7 @@ exports.post = function (req, res) {
         else {
             res.status(201).send({
                 status: true,
-                message: "Empreendedora incluída com sucesso ♥"
+                message: "♥ Empreendedora incluída com sucesso ♥"
             });
         }
     });

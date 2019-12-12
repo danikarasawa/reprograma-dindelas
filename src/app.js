@@ -6,12 +6,10 @@ const app = express();
 
 mongoose.connect("mongodb+srv://adm_dindin_master:em2tcz8qKjbQ8Ta@cluster0-dnqcd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
-
-
 //ROTAS 
 const index = require("./routes/index")
 const empreendedoras = require("./routes/empreendedorasRoute")
-// const investidoras = require("./routes/investidorasRoute")
+const investidoras = require("./routes/investidorasRoute")
 // const sessionEmpreendedoras = require("./routes/sessionEmpreendedorasRoute")
 // const sessionInvestidoras = require("./routes/sessionInvestidorasRoute")
 
@@ -32,7 +30,7 @@ app.get('/api-doc', (req, res)=>{
 });
 
 app.use("/e", empreendedoras);
-// app.use("/investidoras", investidoras);
+app.use("/i", investidoras);
 // app.use("/sessionEmpreendedoras", sessionEmpreendedoras);
 // app.use("/sessionInvestidoras", sessionInvestidoras);
 
