@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const EmpreendedorasSchema = new mongoose.Schema({
     cpf: { type: Number, required: true },
+    //hashPass: {type: String},
     nome: { type: String, required: true },
-    telefone: { type: Number, required: true },
+    telefone: { type: String, required: true },
     idade: { type: Number, required: true },
     genero: { type: String, enum: ['Feminino', 'Masculino', 'Transgênero'], required: true },
     estadoCivil: { type: String, enum: ['Solteira', 'União Estável', 'Casada', 'Divorciada'], required: true },

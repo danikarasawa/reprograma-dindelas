@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const InvestidorasSchema = new mongoose.Schema({
     cnpj: { type: Number, required: true },
+    hashPass: {type: String},
     nome: { type: String, required: true },
-    telefone: { type: Number, required: true },
+    telefone: { type: String, required: true },
     genero: { type: String, enum: ['Feminino', 'Masculino', 'Transgênero'], required: true },
     ticket: { type: Number, required: true },
     tipoNegocio: { type: String, enum: ['Alimentação', 'Beleza', 'Tecnologia', 'Vestuário'], required: true },
