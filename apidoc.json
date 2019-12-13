@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "apiDoc do projeto final",
     "title": "[apiDoc] Dindelas by Dani Karasawa",
-    "url": "https://github.com/danikarasawa/reprograma-dindelas",
+    "url": "https://empreendedoras-api.herokuapp.com/",
     "template": {
       "forceLanguage": "PT-BR"
     }
