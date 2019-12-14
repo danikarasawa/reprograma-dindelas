@@ -42,10 +42,10 @@ E mais... Surpresa... :D [Sem spoilers, ne? Após a apresentação, atualizo aqu
 
 <h3>Suporte e Linguagens</h3>
 
-* HTML + CSS
+* HTML + CSS + Bootstrap
 * NodeJS
 * API REST
-* MongoDB
+* MongoDB - Atlas
 * Postman
 * APIDOC
 * Heroku
