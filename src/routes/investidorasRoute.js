@@ -7,8 +7,9 @@ router.get("/investidoras", controller.get);
 router.post("/investidoras", controller.post);
 
 router.get("/:cnpj", controller.getByCNPJ);
-router.put("/:cnpj", controller.updateCNPJ)
+router.put("/:cnpj", controller.updateBusiness);
 
+router.delete("/:nome", controller.deleteInvestor);
 
 //router.use(authMiddleware);
 //router.get("/escolherFuncao", controller.getEscolherFuncao);

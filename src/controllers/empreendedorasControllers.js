@@ -10,7 +10,16 @@ exports.get = (req, res) => {
     });
 };
 
-// POST INITIAL DATA OF THE EMPREENDEDORAS
+//GET BY CPF
+exports.getByCPF = (req, res) => {
+    const cpf = req.params.cpf
+    Empreendedoras.find({ cpf }, function (err, empreendedora) {
+        if (err) res.status(500).send({ message: `Infelizmente não localizamos essa empreendedora com ${cpf}` });
+        res.status(200).send(empreendedora);
+    })
+};
+
+//POST INITIAL DATA OF THE EMPREENDEDORAS
 exports.post = function (req, res) {
     const empreendedoras = new Empreendedoras(req.body);
 
@@ -24,6 +33,37 @@ exports.post = function (req, res) {
         }
     });
 };
+
+//UPDATE TELEFONE
+exports.updatePhone = (req, res) => {
+
+    Empreendedoras.updateOne(
+        { cpf: req.params.cpf },
+        { telefone: req.body.telefone },
+        function (err) {
+            if (err) return res.status(500).send({ message: err });
+            res.status(200).send({ message: "Telefone atualizado com sucesso!" });
+        })
+};
+
+//DELETE EMPREENDEDORA
+exports.deleteEntrepreneur = (req, res) => {
+    const cpf = req.params.cpf;
+
+    Empreendedoras.findOne({ cpf }, function (err, empreendedora) {
+        if (err) res.status(500).send(err);
+
+        if (!empreendedora) return res.status(200).send({ message: "Infelizmente não localizamos essa investidora" });
+
+        empreendedora.remove(function (err) {
+            if (!err) {
+                res.status(200).send({ message: "Empreendedora removida com sucesso..." })
+            }
+        })
+    })
+};
+
+
 
 // exports.post = (req, res) => {
 //     const { cpf, password, nome, telefone, idade, genero, estadoCivil, escolaridade, tipoNegocio, tempoNegocio } = req.body;
@@ -47,3 +87,33 @@ exports.post = function (req, res) {
 //         })
 //     }
 // }
+
+// ROTA DA NATI PARA ATUALIZAR ITENS ESPECIFICOS 
+
+// exports.updateOcorrencia = (req, res) => {
+//     const cep = req.params.cep;
+//     const id = req.params.id;
+
+//     const encontratCep = CEPs.findOne({ cep: cep }, function (err, cep) {
+
+//         if (err) {
+//             res.status(404).send({ message: "CEP não localizado" })
+//             return
+//         } else {
+
+//          let updateObj = { $set: {}};
+//             for(var param in req.body) {
+//             updateObj.$set['ocorrencias.$.'+ param] = req.body[param];
+//             }
+
+//             CEPs.update(
+//                 { 'ocorrencias.id': id },
+//                  updateObj,
+//                 { upsert: true },
+//                 function (err) {
+//                     if (err) return res.status(500).send({ message: err });
+//                     res.status(204).send({ message: "Ocorrência atualizada com sucesso!" })
+//                 }
+//             )
+//         }
+//     })

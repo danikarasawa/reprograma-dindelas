@@ -14,12 +14,12 @@ exports.get = (req, res) => {
 exports.getByCNPJ = (req, res) => {
     const cnpj = req.params.cnpj
     Investidoras.find({ cnpj }, function (err, investidoras) {
-        if (err) res.status(500).send({ message: `Infelizmente não localizamos essa investidora: ${cnpj}` });
+        if (err) res.status(500).send({ message: `Infelizmente não localizamos essa investidora com ${cnpj}` });
         res.status(200).send(investidoras);
     })
 };
 
-// POST INITIAL DATA OF THE INVESTIDORAS
+//POST INITIAL DATA OF THE INVESTIDORAS
 exports.post = function (req, res) {
     const investidoras = new Investidoras(req.body);
 
@@ -34,15 +34,31 @@ exports.post = function (req, res) {
     });
 };
 
-//UPDATE TIPO DE NEGOCIO
-exports.updateCNPJ = (req, res) => {
-    const cnpj = req.params.cnpj
+//UPDATE TIPO DE NEGÓCIO
+exports.updateBusiness = (req, res) => {
 
     Investidoras.updateOne(
-        { cpf: req.params.cpf },
-        { tipoNegocio: req.body },
+        { cnpj: req.params.cnpj },
+        { tipoNegocio: req.body.tipoNegocio },
         function (err) {
             if (err) return res.status(500).send({ message: err });
-            res.status(200).send({ message: "Atualizado com sucesso!" });
+            res.status(200).send({ message: "Tipo de Negócio atualizado com sucesso!" });
         })
+};
+
+//DELETE INVESTIDORA 
+exports.deleteInvestor = (req, res) => {
+    const nome = req.params.nome;
+
+    Investidoras.findOne({ nome }, function (err, investidora) {
+        if (err) res.status(500).send(err);
+
+        if (!investidora) return res.status(200).send({ message: "Infelizmente não localizamos essa investidora" });
+
+        investidora.remove(function (err) {
+            if (!err) {
+                res.status(200).send({ message: "Investidora removida com sucesso..." });
+            }
+        })
+    })
 };

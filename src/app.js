@@ -25,15 +25,13 @@ app.use("/", index);
 
 //ROTA APIDOC
 app.use(express.static('doc'));
-app.get('/api-doc', (req, res)=>{
-    res.sendFile(path.join( __dirname + '/../doc/index.html'));
+app.get('/api-doc', (req, res) => {
+    res.sendFile(path.join(__dirname + '/../doc/index.html'));
 });
 
 app.use("/e", empreendedoras);
 app.use("/i", investidoras);
 // app.use("/sessionEmpreendedoras", sessionEmpreendedoras);
 // app.use("/sessionInvestidoras", sessionInvestidoras);
-
-
 
 module.exports = app;

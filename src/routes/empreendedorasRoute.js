@@ -41,6 +41,11 @@ router.get("/empreendedoras", controller.get);
 
 router.post("/empreendedoras", controller.post);
 
+router.get("/:cpf", controller.getByCPF);
+router.put("/:cpf", controller.updatePhone);
+
+router.delete("/:nome", controller.deleteEntrepreneur);
+
 //router.use(authMiddleware);
 //router.get("/escolherFuncao", controller.getEscolherFuncao);
 
