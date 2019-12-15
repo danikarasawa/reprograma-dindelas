@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const EmpreendedorasSchema = new mongoose.Schema({
     cpf: { type: Number, required: true },
+    hashPass: {type: String},
     nome: { type: String },
     telefone: { type: String },
     idade: { type: Number },

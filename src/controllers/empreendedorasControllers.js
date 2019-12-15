@@ -61,19 +61,38 @@ exports.deleteEntrepreneur = (req, res) => {
     })
 };
 
+//POST FOR SIGNUP 
 exports.postHashPass = async (req, res) => {
     const { cpf, password } = req.body;
     const salt = bcrypt.genSaltSync(bcryptSalt);
 
-    const hashPass = await bcrypt.hashSync(password, salt);
-    Empreendedoras.push({ cpf, hashPass })
-        if (err) res.status(500).send(err);
-        else {
+    const hashPass = bcrypt.hashSync(password, salt);
+    const newEmp = new Empreendedoras({ cpf, hashPass })
+    newEmp.save(function (err) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
             res.status(201).send({
                 status: true,
                 message: "Empreendedora cadastrada com sucesso, bebê"
             });
-            return res.status(201).send(empreendedoras);
         }
-        return res.status(401).json({ error: 'Errado' })
-    };
+    })
+};
+
+// exports.postHashPass = async (req, res) => {
+//     const { cpf, password } = req.body;
+//     const salt = bcrypt.genSaltSync(bcryptSalt);
+
+//     const hashPass = bcrypt.hashSync(password, salt);
+//     Empreendedoras.save({ cpf, hashPass })
+//     if (err) res.status(500).send(err);
+//     else {
+//         res.status(201).send({
+//             status: true,
+//             message: "Empreendedora cadastrada com sucesso, bebê"
+//         });
+//         return res.status(201).send(empreendedoras);
+//     }
+//     return res.status(401).json({ error: 'Errado' })
+// };
