@@ -1,7 +1,7 @@
-// const express = require("express");
-// const router = express.Router();
-// const controller = require("../controllers/sessionEmpreendedorasControllers");
+const express = require("express");
+const router = express.Router();
+const EmpreendedoraAuthController = require("../controllers/sessionEmpreendedorasControllers");
 
-// router.post("/empreendedoras", controller.accessToken);
+router.post("/login", EmpreendedoraAuthController.accessToken);
 
-// module.exports = router;
+module.exports = router;

@@ -1,9 +1,9 @@
 {
-    "name": "reprograma-dindelas",
-    "version": "0.1.0",
-    "description": "apiDoc do projeto final",
-    "title": "[apiDoc] Dindelas by Dani Karasawa",
-    "url": "https://empreendedoras-api.herokuapp.com/",
+    "name": "Empreendedoras + Investidoras - Dani Karasawa",
+    "version": "1.0.0",
+    "description": "apiDoc do projeto final Mercado Livre + {reprograma}",
+    "title": "Empreendedoras + Investidoras - Dani Karasawa",
+    "url": "https://empreendedoras-api.herokuapp.com",
     "template": {
       "forceLanguage": "PT-BR"
     }
