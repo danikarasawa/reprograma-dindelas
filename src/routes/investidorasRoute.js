@@ -109,7 +109,7 @@ router.post("/investidoras", controller.post);
 router.get("/:cnpj", controller.getByCNPJ);
 
 /**
- * @api {put} /i/:cnpj Requisição via CPF da empreendedora para atualizar tipo de negócio
+ * @api {put} /i/:cnpj Requisição via CNPJ da empreendedora para atualizar tipo de negócio
  * @apiName put
  * @apiGroup Investidoras
  * 
