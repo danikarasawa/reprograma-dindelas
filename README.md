@@ -45,9 +45,9 @@ E mais... Surpresa... :D [Sem spoilers, ne? Após a apresentação, atualizo aqu
 * HTML + CSS + Bootstrap
 * NodeJS
 * API REST
-* MongoDB - Atlas
+* MongoDB Atlas
 * Postman 
-* APIDOC - https://empreendedoras-api.herokuapp.com/api-doc
+* APIDOC - https://empreendedoras-api.herokuapp.com/apidoc
 * Heroku - https://empreendedoras-api.herokuapp.com/ 
 
 <h3>Sprints</h3>
