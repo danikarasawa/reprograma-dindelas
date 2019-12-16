@@ -11,7 +11,7 @@ const index = require("./routes/index")
 const empreendedoras = require("./routes/empreendedorasRoute")
 const investidoras = require("./routes/investidorasRoute")
 const sessionEmpreendedoras = require("./routes/sessionEmpreendedorasRoute")
-// const sessionInvestidoras = require("./routes/sessionInvestidorasRoute")
+const sessionInvestidoras = require("./routes/sessionInvestidorasRoute")
 
 app.use(express.json());
 
@@ -25,13 +25,13 @@ app.use("/", index);
 
 //ROTA APIDOC
 app.use(express.static('doc'));
-app.get('/api-doc', (req, res) => {
+app.get('/apidoc', (req, res) => {
     res.sendFile(path.join(__dirname + '/../doc/index.html'));
 });
 
 app.use("/e", empreendedoras);
 app.use("/i", investidoras);
 app.use("/SE", sessionEmpreendedoras);
-// app.use("/SI", sessionInvestidoras);
+app.use("/SI", sessionInvestidoras);
 
 module.exports = app;

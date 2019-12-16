@@ -98,6 +98,34 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/e/register",
+    "title": "Registro de login e senha com encriptação JWT e Bcrypt da empreendedora",
+    "name": "post",
+    "group": "Empreendedoras",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true, \n      message: \"Empreendedora cadastrada com sucesso!\"\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/empreendedorasRoute.js",
+    "groupTitle": "Empreendedoras"
+  },
+  {
+    "type": "post",
     "url": "/e/empreendedoras",
     "title": "Cadastro inicial da empreendedora",
     "name": "post",
@@ -333,6 +361,34 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/i/register",
+    "title": "Registro de login e senha com encriptação JWT e Bcrypt da investidora",
+    "name": "post",
+    "group": "Investidoras",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true, \n      message: \"Investidora cadastrada com sucesso!\"\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/investidorasRoute.js",
+    "groupTitle": "Investidoras"
+  },
+  {
+    "type": "post",
     "url": "/i/investidoras",
     "title": "Cadastro inicial da investidora",
     "name": "post",
@@ -468,5 +524,87 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "src/routes/investidorasRoute.js",
     "groupTitle": "Investidoras"
+  },
+  {
+    "type": "post",
+    "url": "/SE/:cpf",
+    "title": "Requisição via CPF da empreendedora para realizar login",
+    "name": "accessToken",
+    "group": "Session_Empreendedoras",
+    "parameter": {
+      "fields": {
+        "Request Body": [
+          {
+            "group": "Request Body",
+            "type": "Number",
+            "optional": false,
+            "field": "cpf",
+            "description": "<p>Dado individual</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "user: {",
+          "content": "user: {\n   id,\n   cpf,\n }",
+          "type": "Objeto"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 \n{\n  \"error\": \"Errado\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/sessionEmpreendedorasRoute.js",
+    "groupTitle": "Session_Empreendedoras"
+  },
+  {
+    "type": "post",
+    "url": "/SI/:cpf",
+    "title": "Requisição via CNPJ da investidora para realizar login",
+    "name": "accessToken",
+    "group": "Session_Investidoras",
+    "parameter": {
+      "fields": {
+        "Request Body": [
+          {
+            "group": "Request Body",
+            "type": "Number",
+            "optional": false,
+            "field": "cnpj",
+            "description": "<p>Dado individual</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "user: {",
+          "content": "user: {\n   id,\n   cnpj,\n }",
+          "type": "Objeto"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 \n{\n  \"error\": \"Errado\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/sessionInvestidorasRoute.js",
+    "groupTitle": "Session_Investidoras"
   }
 ] });

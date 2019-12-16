@@ -5,7 +5,7 @@ const {promisify} = require('util');
 module.exports = async (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader){
-        return res.status(401).json({error: 'Token não listado'});
+        return res.status(401).send({error: 'Token não listado'});
     }
     
     const [, token] = authHeader.split(' ');
@@ -15,6 +15,6 @@ module.exports = async (req, res, next) => {
         req.userId = decoded.id;
         return next();
     } catch (err){
-        return res.status(401).json({error: 'Token inválido'});
+        return res.status(401).send({error: 'Token inválido'});
     }
 };

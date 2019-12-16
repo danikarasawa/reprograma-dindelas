@@ -74,25 +74,8 @@ exports.postHashPass = async (req, res) => {
         } else {
             res.status(201).send({
                 status: true,
-                message: "Empreendedora cadastrada com sucesso, bebê"
+                message: "Empreendedora cadastrada com sucesso!"
             });
         }
     })
 };
-
-// exports.postHashPass = async (req, res) => {
-//     const { cpf, password } = req.body;
-//     const salt = bcrypt.genSaltSync(bcryptSalt);
-
-//     const hashPass = bcrypt.hashSync(password, salt);
-//     Empreendedoras.save({ cpf, hashPass })
-//     if (err) res.status(500).send(err);
-//     else {
-//         res.status(201).send({
-//             status: true,
-//             message: "Empreendedora cadastrada com sucesso, bebê"
-//         });
-//         return res.status(201).send(empreendedoras);
-//     }
-//     return res.status(401).json({ error: 'Errado' })
-// };

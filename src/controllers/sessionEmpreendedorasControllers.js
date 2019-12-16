@@ -4,36 +4,37 @@ const Empreendedoras = require("../model/empreendedoras");
 const bcrypt = require("bcryptjs");
 
 function checkPassword(passwordEntry, password) {
-    return bcrypt.compareSync(passwordEntry, password);
+  return bcrypt.compare(passwordEntry, password);
+}
+
+exports.accessToken = (req, res) => {
+  const { login, password: passwordEntry } = req.body;
+
+  const user = Empreendedoras.findOne({ cpf: login })
+
+  if (!user) {
+    return res.status(401).send({ error: 'Empreendedora não encontrada' });
   }
-  
-  exports.accessToken = (req, res) => {
-    const { cadastro, password: passwordEntry } = req.body;
-    const user = Empreendedoras.find(e => e.cpf == cadastro)
-  
-    if (!user) {
-      return res.status(401).json({ error: 'Empreendedora não encontrada' });
-    }
-  
-    const { id, cpf, hashPass } = user;
-  
-    try {
-      checkPassword(passwordEntry, hashPass);
-    } catch (e) {
-      return res.status(401).json({ error: 'Senha incorreta' });
-    }
-  
-    try {
-      return res.json({
-        user: {
-          id,
-          cpf,
-        },
-        token: jwt.sign({ id }, authConfig.secret, {
-          expiresIn: authConfig.expiresIn,
-        }),
-      });
-    } catch (e) {
-      return res.status(401).json({ error: 'Errado' });
-    }
-  };
+
+  const { id, cpf, hashPass } = user;
+
+  try {
+    checkPassword(passwordEntry, hashPass);
+  } catch {
+    return res.status(401).send({ error: 'Senha incorreta' });
+  }
+
+  try {
+    return res.send({
+      user: {
+        id,
+        cpf,
+      },
+      token: jwt.sign({ id }, authConfig.secret, {
+        expiresIn: authConfig.expiresIn,
+      }),
+    });
+  } catch {
+    return res.status(401).send({ error: 'Errado' });
+  }
+};

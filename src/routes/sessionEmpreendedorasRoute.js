@@ -1,7 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const EmpreendedoraAuthController = require("../controllers/sessionEmpreendedorasControllers");
+const empreendedoraAuthController = require("../controllers/sessionEmpreendedorasControllers");
 
-router.post("/login", EmpreendedoraAuthController.accessToken);
+/**
+ * @api {post} /SE/:cpf Requisição via CPF da empreendedora para realizar login
+ * @apiName accessToken
+ * @apiGroup Session Empreendedoras
+ * 
+ * @apiParam (Request Body) {Number} cpf Dado individual
+ * 
+ * @apiSuccessExample {Objeto} 
+ *    user: {
+ *       id,
+ *       cpf,
+ *     }
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 401 
+ *     {
+ *       "error": "Errado"
+ *     }
+ */
+router.post("/login", empreendedoraAuthController.accessToken);
 
 module.exports = router;

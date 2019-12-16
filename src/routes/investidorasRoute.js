@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/investidorasControllers");
-//const authMiddleware = require("../middlewares/auth");
+const authMiddleware = require("../middlewares/auth");
 
 /**
  * @api {get} /i/investidoras Lista completa de investidoras
@@ -30,6 +30,25 @@ const controller = require("../controllers/investidorasControllers");
  */
 router.get("/investidoras", controller.get);
 
+/**
+ * @api {post} /i/register Registro de login e senha com encriptação JWT e Bcrypt da investidora 
+ * @apiName post
+ * @apiGroup Investidoras
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *    HTTP/1.1 201 CREATED
+ * {
+ *       status: true, 
+ *       message: "Investidora cadastrada com sucesso!"
+ *    }
+ *     
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 500 
+ *     {
+ *       "error": "Internal Server Error"
+ *     }
+ */
+router.post("/register", controller.postHashPass)
 /**
  * @api {post} /i/investidoras Cadastro inicial da investidora
  * @apiName post
@@ -129,7 +148,6 @@ router.put("/:cnpj", controller.updateBusiness);
  */
 router.delete("/:nome", controller.deleteInvestor);
 
-//router.use(authMiddleware);
-//router.get("/escolherFuncao", controller.getEscolherFuncao);
+router.use(authMiddleware);
 
 module.exports = router;

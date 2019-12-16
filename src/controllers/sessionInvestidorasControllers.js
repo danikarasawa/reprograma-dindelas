@@ -1,39 +1,40 @@
-// const jwt = require("jsonwebtoken");
-// const authConfig = require("../config/auth");
-// const investidoras = require("../model/investidoras");
-// const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const authConfig = require("../config/auth");
+const Investidoras = require("../model/investidoras");
+const bcrypt = require("bcryptjs");
 
-// function checkPassword(passwordEntry, password) {
-//     return bcrypt.compareSync(passwordEntry, password);
-// };
-
-// exports.accessToken = (req, res) => {
-//     const { cnpj, password: passwordEntry } = req.body;
-//     const userInvestidora = investidoras.find(e => e.cpf == cpf)
-
-//     if (!userInvestidora) {
-//         return res.status(401).json({error: 'User not found'});
-//     }
-
-//     const {id, cnpj, hashPass} = userInvestidora;
-
-//     try{
-//         checkPassword(passwordEntry, hashPass);
-//     } catch (e) {
-//         return res.status(401).json({ error: 'password does not match'});
-//     }
-
-//     try{
-//         return res.json({
-//             user: {
-//                 id,
-//                 cnpj,
-//             },
-//             token: jwt.sign({ id }, authConfig.secret, {
-//                 expiresIn: authConfig.expiresIn,
-//             }),
-//         });
-//     } catch (e) {
-//         return res.status(401).json({error: 'erro'});
-//     }
-// };
+function checkPassword(passwordEntry, password) {
+    return bcrypt.compare(passwordEntry, password);
+  }
+  
+  exports.accessToken = (req, res) => {
+    const { login, password: passwordEntry } = req.body;
+  
+    const user = Investidoras.findOne({ cnpj: login })
+  
+    if (!user) {
+      return res.status(401).send({ error: 'Investidora não encontrada' });
+    }
+  
+    const { id, cnpj, hashPass } = user;
+  
+    try {
+      checkPassword(passwordEntry, hashPass);
+    } catch {
+      return res.status(401).send({ error: 'Senha incorreta' });
+    }
+  
+    try {
+      return res.send({
+        user: {
+          id,
+          cnpj,
+        },
+        token: jwt.sign({ id }, authConfig.secret, {
+          expiresIn: authConfig.expiresIn,
+        }),
+      });
+    } catch {
+      return res.status(401).send({ error: 'Errado' });
+    }
+  };

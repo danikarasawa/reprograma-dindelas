@@ -1,6 +1,6 @@
 const Investidoras = require("../model/investidoras");
-// const bcrypt = require("bcryptjs");
-// const bcryptSalt = 8;
+const bcrypt = require("bcryptjs");
+const bcryptSalt = 8;
 
 //GET ALL INVESTIDORAS
 exports.get = (req, res) => {
@@ -60,5 +60,24 @@ exports.deleteInvestor = (req, res) => {
                 res.status(200).send({ message: "Investidora removida com sucesso..." });
             }
         })
+    })
+};
+
+//POST FOR SIGNUP 
+exports.postHashPass = async (req, res) => {
+    const { cnpj, password } = req.body;
+    const salt = bcrypt.genSaltSync(bcryptSalt);
+
+    const hashPass = bcrypt.hashSync(password, salt);
+    const newInv = new Investidoras({ cnpj, hashPass })
+    newInv.save(function (err) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(201).send({
+                status: true,
+                message: "Investidora cadastrada com sucesso!"
+            });
+        }
     })
 };

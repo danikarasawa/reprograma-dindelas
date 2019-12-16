@@ -31,6 +31,26 @@ const authMiddleware = require("../middlewares/auth");
 router.get("/empreendedoras", controller.get);
 
 /**
+ * @api {post} /e/register Registro de login e senha com encriptação JWT e Bcrypt da empreendedora 
+ * @apiName post
+ * @apiGroup Empreendedoras
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *    HTTP/1.1 201 CREATED
+ * {
+ *       status: true, 
+ *       message: "Empreendedora cadastrada com sucesso!"
+ *    }
+ *     
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 500 
+ *     {
+ *       "error": "Internal Server Error"
+ *     }
+ */
+router.post("/register", controller.postHashPass)
+
+/**
  * @api {post} /e/empreendedoras Cadastro inicial da empreendedora
  * @apiName post
  * @apiGroup Empreendedoras
@@ -58,9 +78,6 @@ router.get("/empreendedoras", controller.get);
  *       "error": "Internal Server Error"
  *     }
  */
-
-router.post("/register", controller.postHashPass)
-//router.use(authMiddleware);
 
 router.post("/empreendedoras", controller.post);
 
@@ -133,7 +150,6 @@ router.put("/:cpf", controller.updatePhone);
  */
 router.delete("/:cpf", controller.deleteEntrepreneur);
 
-//router.use(authMiddleware);
-//router.get("/escolherFuncao", controller.getEscolherFuncao);
+router.use(authMiddleware);
 
 module.exports = router;
