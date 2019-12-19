@@ -50,7 +50,7 @@ router.get("/empreendedoras", controller.get);
  */
 router.post("/register", controller.postHashPass);
 
-//router.use(authMiddleware);
+router.use(authMiddleware);
 
 /**
  * @api {post} /e/empreendedoras Cadastro inicial da empreendedora

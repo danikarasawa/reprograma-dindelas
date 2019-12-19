@@ -22,7 +22,7 @@ define({ "api": [
       "examples": [
         {
           "title": "HTTP/1.1 200 OK",
-          "content": "HTTP/1.1 200 OK\n{ \n   \"message\": \"Empreendedora removida com sucesso...\" \n}",
+          "content": "HTTP/1.1 200 OK\n{\n   \"message\": \"Empreendedora removida com sucesso...\"\n}",
           "type": "Objeto"
         }
       ]
@@ -31,7 +31,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 200 \n{\n  \"message\": \"Infelizmente não localizamos essa investidora\"\n}",
+          "content": "HTTP/1.1 200\n{\n  \"message\": \"Infelizmente não localizamos essa investidora\"\n}",
           "type": "json"
         }
       ]
@@ -59,7 +59,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -87,7 +87,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Infelizmente não localizamos essa empreendedora com ${cpf}\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Infelizmente não localizamos essa empreendedora com ${cpf}\"\n}",
           "type": "json"
         }
       ]
@@ -106,7 +106,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true, \n      message: \"Empreendedora cadastrada com sucesso!\"\n   }",
+          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true,\n      message: \"Empreendedora cadastrada com sucesso!\"\n   }",
           "type": "json"
         }
       ]
@@ -115,7 +115,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -134,7 +134,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true, \n      message: \"♥ Empreendedora incluída com sucesso ♥\"\n   }",
+          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true,\n      message: \"♥ Empreendedora incluída com sucesso ♥\"\n   }",
           "type": "json"
         }
       ]
@@ -212,7 +212,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -244,7 +244,7 @@ define({ "api": [
       "examples": [
         {
           "title": "HTTP/1.1 200 OK",
-          "content": "HTTP/1.1 200 OK\n{ \n   \"message\": \"Telefone atualizado com sucesso!\" \n}",
+          "content": "HTTP/1.1 200 OK\n{\n   \"message\": \"Telefone atualizado com sucesso!\"\n}",
           "type": "Objeto"
         }
       ]
@@ -253,7 +253,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -285,7 +285,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n  \n{ message: \"Investidora removida com sucesso...\" }",
+          "content": "HTTP/1.1 200 OK\n\n{ message: \"Investidora removida com sucesso...\" }",
           "type": "json"
         }
       ]
@@ -294,7 +294,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  message: \"Infelizmente não localizamos essa investidora\"\n}",
+          "content": "HTTP/1.1 500\n{\n  message: \"Infelizmente não localizamos essa investidora\"\n}",
           "type": "json"
         }
       ]
@@ -322,7 +322,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -341,7 +341,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n    \n  {\n\"cnpj\": Number,\n\"nome\": \"String\",\n\"telefone\": \"String\",\n\"genero\": \"String\",\n\"ticket\": Number,\n\"tipoNegocio\": [\"String\"],\n\"taxaJuros\": Number,\n\"parcelasMaximas\": Number,\n\"investimentoTotal\": Number\n  }",
+          "content": "  HTTP/1.1 200 OK\n\n  {\n\"cnpj\": Number,\n\"nome\": \"String\",\n\"telefone\": \"String\",\n\"genero\": \"String\",\n\"ticket\": Number,\n\"tipoNegocio\": [\"String\"],\n\"taxaJuros\": Number,\n\"parcelasMaximas\": Number,\n\"investimentoTotal\": Number\n  }",
           "type": "json"
         }
       ]
@@ -350,7 +350,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  message: `Infelizmente não localizamos essa investidora com ${cnpj}`\n}",
+          "content": "HTTP/1.1 500\n{\n  message: `Infelizmente não localizamos essa investidora com ${cnpj}`\n}",
           "type": "json"
         }
       ]
@@ -369,7 +369,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true, \n      message: \"Investidora cadastrada com sucesso!\"\n   }",
+          "content": "   HTTP/1.1 201 CREATED\n{\n      status: true,\n      message: \"Investidora cadastrada com sucesso!\"\n   }",
           "type": "json"
         }
       ]
@@ -378,7 +378,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -475,7 +475,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -487,7 +487,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "/i/:cnpj",
-    "title": "Requisição via CPF da empreendedora para atualizar tipo de negócio",
+    "title": "Requisição via CNPJ da empreendedora para atualizar tipo de negócio",
     "name": "put",
     "group": "Investidoras",
     "parameter": {
@@ -507,7 +507,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n  \n{ message: \"Tipo de Negócio atualizado com sucesso!\" }",
+          "content": "HTTP/1.1 200 OK\n\n{ message: \"Tipo de Negócio atualizado com sucesso!\" }",
           "type": "json"
         }
       ]
@@ -516,7 +516,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 500 \n{\n  \"error\": \"Internal Server Error\"\n}",
+          "content": "HTTP/1.1 500\n{\n  \"error\": \"Internal Server Error\"\n}",
           "type": "json"
         }
       ]
@@ -557,7 +557,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 401 \n{\n  \"error\": \"Errado\"\n}",
+          "content": "HTTP/1.1 401\n{\n  \"error\": \"Errado\"\n}",
           "type": "json"
         }
       ]
@@ -598,7 +598,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 401 \n{\n  \"error\": \"Errado\"\n}",
+          "content": "HTTP/1.1 401\n{\n  \"error\": \"Errado\"\n}",
           "type": "json"
         }
       ]
