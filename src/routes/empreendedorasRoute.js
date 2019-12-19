@@ -23,7 +23,7 @@ const authMiddleware = require("../middlewares/auth");
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
@@ -31,24 +31,26 @@ const authMiddleware = require("../middlewares/auth");
 router.get("/empreendedoras", controller.get);
 
 /**
- * @api {post} /e/register Registro de login e senha com encriptação JWT e Bcrypt da empreendedora 
+ * @api {post} /e/register Registro de login e senha com encriptação JWT e Bcrypt da empreendedora
  * @apiName post
  * @apiGroup Empreendedoras
  *
  * @apiSuccessExample {json} Success-Response:
  *    HTTP/1.1 201 CREATED
  * {
- *       status: true, 
+ *       status: true,
  *       message: "Empreendedora cadastrada com sucesso!"
  *    }
- *     
+ *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
  */
-router.post("/register", controller.postHashPass)
+router.post("/register", controller.postHashPass);
+
+//router.use(authMiddleware);
 
 /**
  * @api {post} /e/empreendedoras Cadastro inicial da empreendedora
@@ -58,10 +60,10 @@ router.post("/register", controller.postHashPass)
  * @apiSuccessExample {json} Success-Response:
  *    HTTP/1.1 201 CREATED
  * {
- *       status: true, 
+ *       status: true,
  *       message: "♥ Empreendedora incluída com sucesso ♥"
  *    }
- *     
+ *
  * @apiParam (Request Body) {Number} cpf CPF como id
  * @apiParam (Request Body) {String} nome Nome completo
  * @apiParam (Request Body) {String} telefone Contato primário
@@ -70,10 +72,10 @@ router.post("/register", controller.postHashPass)
  * @apiParam (Request Body) {String} estadoCivil Dado individual
  * @apiParam (Request Body) {String} escolaridade Dado individual
  * @apiParam (Request Body) {String} tipoNegocio Dado sensível
- * @apiParam (Request Body) {Number} tempoNegocio Dado sensível 
- * 
+ * @apiParam (Request Body) {Number} tempoNegocio Dado sensível
+ *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
@@ -101,7 +103,7 @@ router.post("/empreendedoras", controller.post);
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Infelizmente não localizamos essa empreendedora com ${cpf}"
  *     }
@@ -112,44 +114,46 @@ router.get("/:cpf", controller.getByCPF);
  * @api {put} /e/:cpf Requisição via CPF da empreendedora para atualizar telefone
  * @apiName updatePhone
  * @apiGroup Empreendedoras
- * 
+ *
  * @apiParam (Request Body) {String} telefone Dado individual
- * 
- * @apiSuccessExample {Objeto} 
+ *
+ * @apiSuccessExample {Objeto}
  *    HTTP/1.1 200 OK
- *    { 
- *       "message": "Telefone atualizado com sucesso!" 
+ *    {
+ *       "message": "Telefone atualizado com sucesso!"
  *    }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
  */
 router.put("/:cpf", controller.updatePhone);
 
+//NEW CREDIT REQUEST
+//New sprint
+//router.put("/:cpf", controller.putCredit);
+
 /**
  * @api {delete} /e/:nome Requisição via cpf da empreendedora para deletar cadastro
  * @apiName deleteEntrepreneur
  * @apiGroup Empreendedoras
- * 
+ *
  * @apiParam (Request Body) {Number} cpf CPF como id
- * 
- * @apiSuccessExample {Objeto} 
+ *
+ * @apiSuccessExample {Objeto}
  *    HTTP/1.1 200 OK
- *    { 
- *       "message": "Empreendedora removida com sucesso..." 
+ *    {
+ *       "message": "Empreendedora removida com sucesso..."
  *    }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 200 
+ *     HTTP/1.1 200
  *     {
  *       "message": "Infelizmente não localizamos essa investidora"
  *     }
  */
 router.delete("/:cpf", controller.deleteEntrepreneur);
-
-router.use(authMiddleware);
 
 module.exports = router;

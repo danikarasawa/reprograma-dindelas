@@ -23,7 +23,7 @@ const authMiddleware = require("../middlewares/auth");
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
@@ -31,24 +31,27 @@ const authMiddleware = require("../middlewares/auth");
 router.get("/investidoras", controller.get);
 
 /**
- * @api {post} /i/register Registro de login e senha com encriptação JWT e Bcrypt da investidora 
+ * @api {post} /i/register Registro de login e senha com encriptação JWT e Bcrypt da investidora
  * @apiName post
  * @apiGroup Investidoras
  *
  * @apiSuccessExample {json} Success-Response:
  *    HTTP/1.1 201 CREATED
  * {
- *       status: true, 
+ *       status: true,
  *       message: "Investidora cadastrada com sucesso!"
  *    }
- *     
+ *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
  */
-router.post("/register", controller.postHashPass)
+router.post("/register", controller.postHashPass);
+
+router.use(authMiddleware);
+
 /**
  * @api {post} /i/investidoras Cadastro inicial da investidora
  * @apiName post
@@ -60,20 +63,20 @@ router.post("/register", controller.postHashPass)
  *        status: true,
  *        message: "♫ Investidora incluída com sucesso ♫"
  *      }
- *       
+ *
  * @apiParam (Request Body) {Number} cnpj CNPJ como id
  * @apiParam (Request Body) {String} nome Nome completo
  * @apiParam (Request Body) {String} telefone Contato primário
  * @apiParam (Request Body) {String} genero Dado individual
- * 
+ *
  * @apiParam (Request Body) {Number} ticket valor máximo de empréstimo individual
  * @apiParam (Request Body) {String} tipoNegócio tipo de negócios elegíveis por essa investidora
  * @apiParam (Request Body) {Number} taxaJuros taxa de juros mensal
  * @apiParam (Request Body) {Number} parcelasMaximas quantidade de parcelas máxima
- * @apiParam (Request Body) {Number} investimentoTotal valor total disponível para investimento 
+ * @apiParam (Request Body) {Number} investimentoTotal valor total disponível para investimento
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
@@ -87,7 +90,7 @@ router.post("/investidoras", controller.post);
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *       
+ *
  *     {
  *   "cnpj": Number,
  *   "nome": "String",
@@ -101,27 +104,31 @@ router.post("/investidoras", controller.post);
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       message: `Infelizmente não localizamos essa investidora com ${cnpj}`
  *     }
  */
 router.get("/:cnpj", controller.getByCNPJ);
 
+//NEW CREDIT CLIENT
+//New sprint
+//router.put("/:cnpj", controller.updateClient)
+
 /**
  * @api {put} /i/:cnpj Requisição via CNPJ da empreendedora para atualizar tipo de negócio
  * @apiName put
  * @apiGroup Investidoras
- * 
+ *
  * @apiParam (Request Body) {String} tipoNegocio Dado sensível
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *       
+ *
  *     { message: "Tipo de Negócio atualizado com sucesso!" }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       "error": "Internal Server Error"
  *     }
@@ -132,22 +139,20 @@ router.put("/:cnpj", controller.updateBusiness);
  * @api {delete} /i/:nome Requisição via nome da investidora para deletar cadastro
  * @apiName delete
  * @apiGroup Investidoras
- * 
+ *
  * @apiParam (Request Body) {String} nome Nome como id
- * 
+ *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *       
+ *
  *     { message: "Investidora removida com sucesso..." }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 
+ *     HTTP/1.1 500
  *     {
  *       message: "Infelizmente não localizamos essa investidora"
  *     }
  */
 router.delete("/:nome", controller.deleteInvestor);
-
-router.use(authMiddleware);
 
 module.exports = router;

@@ -10,10 +10,10 @@ function checkPassword(passwordEntry, password) {
 exports.accessToken = (req, res) => {
   const { login, password: passwordEntry } = req.body;
 
-  const user = Empreendedoras.findOne({ cpf: login })
+  const user = Empreendedoras.findOne({ cpf: login });
 
   if (!user) {
-    return res.status(401).send({ error: 'Empreendedora não encontrada' });
+    return res.status(401).send({ error: "Empreendedora não encontrada" });
   }
 
   const { id, cpf, hashPass } = user;
@@ -21,20 +21,20 @@ exports.accessToken = (req, res) => {
   try {
     checkPassword(passwordEntry, hashPass);
   } catch {
-    return res.status(401).send({ error: 'Senha incorreta' });
+    return res.status(401).send({ error: "Senha incorreta" });
   }
 
   try {
     return res.send({
       user: {
         id,
-        cpf,
+        cpf
       },
       token: jwt.sign({ id }, authConfig.secret, {
-        expiresIn: authConfig.expiresIn,
-      }),
+        expiresIn: authConfig.expiresIn
+      })
     });
   } catch {
-    return res.status(401).send({ error: 'Errado' });
+    return res.status(401).send({ error: "Errado" });
   }
 };

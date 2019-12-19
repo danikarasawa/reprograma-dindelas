@@ -298,6 +298,64 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "empreendedoras.phone",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"telefone\": \"(81) 79703-6332\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://empreendedoras-api.herokuapp.com/e/16151815041",
+					"protocol": "https",
+					"host": [
+						"empreendedoras-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"e",
+						"16151815041"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empreendedoras.cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://empreendedoras-api.herokuapp.com/e/16151815041",
+					"protocol": "https",
+					"host": [
+						"empreendedoras-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"e",
+						"16151815041"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

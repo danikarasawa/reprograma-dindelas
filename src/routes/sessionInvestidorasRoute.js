@@ -6,17 +6,17 @@ const investidoraAuthController = require("../controllers/sessionInvestidorasCon
  * @api {post} /SI/:cpf Requisição via CNPJ da investidora para realizar login
  * @apiName accessToken
  * @apiGroup Session Investidoras
- * 
+ *
  * @apiParam (Request Body) {Number} cnpj Dado individual
- * 
- * @apiSuccessExample {Objeto} 
+ *
+ * @apiSuccessExample {Objeto}
  *    user: {
  *       id,
  *       cnpj,
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 401 
+ *     HTTP/1.1 401
  *     {
  *       "error": "Errado"
  *     }
