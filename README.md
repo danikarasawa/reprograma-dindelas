@@ -1,6 +1,6 @@
 <h2>Projeto Final | Back-end | {reprograma} + Mercado Livre | Dezembro de 2019</h2>
 
-<h5>Breaking News~</h5>
+<h3>Breaking News~</h3>
 
 Projeto apresentado + Certificado recebido ♥ 
 Até o <b><i>dia 31 de dezembro</b></i> vou continuar implementando novas funcionalidades. A meta é criar <b>pedido</b> e <b>liberação de crédito</b> conectando as <i>collections</i> <b>empreendedoras</b> e <b>investidoras</b>.   
